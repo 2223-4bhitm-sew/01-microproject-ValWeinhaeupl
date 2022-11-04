@@ -2,49 +2,6 @@
 
 == Object Domain Model
 
-[plantuml, class-diagram, svg]
-----
-@startuml
-class Player{
-    +name: String
-    +age: Integer
-    +position: String
-    +goals: Integer
-}
-
-class Team{
-    +name: String
-    +wongames: Integer
-
-}
-
-
-class Trainer{
-    +name: String
-    +age: Integer
-}
-
-
-class Spiel{
-    +date: Date
-}
-
-class Team_Spiel{
-    +goals: Integer
-}
-
-class Pitch{
-    +location: String
-}
-
-Player"*" -- "1"Team
-Trainer"1" -- "*"Team
-Team"*" -- "*"Spiel
-(Team, Spiel) .. Team_Spiel
-Spiel"*" -- "1"Pitch
-
-@enduml
-----
 
 [plantuml, zweiterversuch, svg]
 ----
