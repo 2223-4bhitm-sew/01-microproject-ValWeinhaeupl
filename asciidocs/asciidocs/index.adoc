@@ -45,3 +45,35 @@ Spiel"*" -- "1"Pitch
 
 @enduml
 ----
+
+[plantuml, zweiterversuch, svg]
+----
+class Player{
+    +name: String
+    +age: Integer
+    +position: String
+    +goals: Integer
+}
+
+class Agelevel{
+    +name: String
+}
+
+class Trainer{
+    +name: String
+}
+
+class Trainigsessions{
+    +date: Date
+}
+
+class Field{
+    +location: String
+}
+
+Player"*" -- "1"Agelevel
+Agelevel"*" -- "*"Trainer
+(Trainer, Agelevel) .. Trainigsessions
+Trainigsessions"*" -- "1"Field
+
+----
