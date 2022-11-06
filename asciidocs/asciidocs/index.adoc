@@ -1,5 +1,15 @@
 = Fußballverein
 
+== Beschreibung
+Programm zum Organisieren von Trainingseinheiten, Altersstufen, und Spielern
+eines Fußballvereins.
+
+== User Stories
+* Als Trainer möchte ich eine Trainingseinheit für eine Altersstufe erstellen können.
+* Als Trainer einer Altersgruppe möchte ich die Spieler der Altersgruppe verwalten können.
+* Als Spieler möchte ich meine Traininseinheiten, und deren Eigenschaften(Uhrzeit, Sportplatz) einsehen können.
+* Als Administrator möchte ich Trainer/Spieler hinzufügen oder entfernen können.
+
 == Object Domain Model
 
 
