@@ -1,0 +1,48 @@
+= Fußballverein
+
+== Beschreibung
+Programm zum Organisieren von Trainingseinheiten, Altersstufen, und Spielern
+eines Fußballvereins.
+
+== User Stories
+* Als Trainer möchte ich eine Trainingseinheit für eine Altersstufe erstellen können.
+* Als Trainer einer Altersgruppe möchte ich die Spieler der Altersgruppe verwalten können.
+* Als Spieler möchte ich meine Traininseinheiten, und deren Eigenschaften(Uhrzeit, Sportplatz) einsehen können.
+* Als Administrator möchte ich Trainer/Spieler hinzufügen oder entfernen können.
+
+== Object Domain Model
+
+
+[plantuml, zweiterversuch, svg]
+----
+class Player{
+    +name: String
+    +age: Integer
+    +position: String
+    +goals: Integer
+}
+
+class Agelevel{
+    +name: String
+}
+
+class Trainer{
+    +name: String
+}
+
+class Trainigsessions{
+    +date: Date
+}
+
+class Field{
+    +location: String
+}
+
+Player"*" -- "1"Agelevel
+Agelevel"*" -- "*"Trainer
+(Trainer, Agelevel) .. Trainigsessions
+Trainigsessions"*" -- "1"Field
+
+----
+
+test
