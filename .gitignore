@@ -136,4 +136,6 @@ fabric.properties
 .history
 .ionide
 
+/dist
+
 # End of https://www.toptal.com/developers/gitignore/api/intellij,visualstudiocode
