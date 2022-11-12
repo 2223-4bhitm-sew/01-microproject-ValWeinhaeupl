@@ -44,5 +44,3 @@ Agelevel"*" -- "*"Trainer
 Trainigsessions"*" -- "1"Field
 
 ----
-
-test

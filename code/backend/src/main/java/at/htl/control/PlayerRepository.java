@@ -13,8 +13,8 @@ public class PlayerRepository {
     @Inject
     EntityManager em;
 
-    public void save(Player player) {
-        em.persist(player);
+    public Player save(Player player) {
+        return em.merge(player);
     }
 
     public List<Player> findAll(){
