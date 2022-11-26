@@ -19,6 +19,10 @@ public class Player {
     @Column
     private long playerId;
 
+    @ManyToOne
+    @JoinColumn(name = "FK_AgeLevelId")
+    private AgeLevel ageLevel;
+
     @Column
     private String firstname;
 

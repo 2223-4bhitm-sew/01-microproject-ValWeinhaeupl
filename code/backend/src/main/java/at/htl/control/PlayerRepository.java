@@ -36,4 +36,9 @@ public class PlayerRepository {
                 .setParameter("LAST", lastName);
         return query.getResultList();
     }
+
+    public Player delete(Player player){
+        em.remove(player);
+        return player;
+    }
 }

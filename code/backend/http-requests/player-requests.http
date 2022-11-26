@@ -1,0 +1,9 @@
+POST http://localhost:8080/api/player
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "goals": 2,
+  "position": "Stuermer"
+}

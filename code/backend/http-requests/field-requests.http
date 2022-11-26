@@ -1,0 +1,16 @@
+POST http://localhost:8080/api/field
+Content-Type: application/json
+
+
+{
+  "location" : "Bruckmuehl"
+}
+
+###
+GET http://localhost:8080/api/field
+
+###
+GET http://localhost:8080/api/field/1
+
+###
+DELETE http://localhost:8080/api/field/1
