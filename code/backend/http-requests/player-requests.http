@@ -2,8 +2,9 @@ POST http://localhost:8080/api/player
 Content-Type: application/json
 
 {
-  "firstname": "John",
-  "lastname": "Doe",
+  "firstname": "Valentin",
+  "lastname": "Weinhäupl",
+  "fk_agelevelid": 5,
   "goals": 2,
   "position": "Stuermer"
 }
