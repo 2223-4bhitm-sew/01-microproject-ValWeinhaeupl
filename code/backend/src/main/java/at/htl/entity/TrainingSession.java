@@ -3,6 +3,14 @@ package at.htl.entity;
 import javax.persistence.*;
 import java.time.LocalDate;
 
+@NamedQueries(
+        {
+                @NamedQuery(
+                        name = "TrainingSession.findAll",
+                        query = "select t from TrainingSession t"
+                )
+        }
+)
 @Entity
 public class TrainingSession {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,7 +20,7 @@ public class TrainingSession {
     private LocalDate date;
 
     @ManyToOne
-    @JoinColumn(name = "FK_TrainerId")
+    @JoinColumn(name = "FK_AGELEVEL")
     private AgeLevel ageLevel;
 
     @ManyToOne

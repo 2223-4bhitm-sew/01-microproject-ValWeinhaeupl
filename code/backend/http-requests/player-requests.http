@@ -2,8 +2,11 @@ POST http://localhost:8080/api/player
 Content-Type: application/json
 
 {
-  "firstName": "John",
-  "lastName": "Doe",
+  "firstname": "John",
+  "lastname": "Doe",
   "goals": 2,
   "position": "Stuermer"
 }
+
+###
+GET http://localhost:8080/api/player/firstlast?firstName=John&lastName=Doe
