@@ -47,10 +47,10 @@ public class FieldResource {
     }
 
     @DELETE
-    @Consumes(MediaType.APPLICATION_JSON)
     @Transactional
-    public Response delete(Field field){
-        fieldRepository.delete(field);
+    @Path("{id}")
+    public Response delete(@PathParam("id") long id){
+        fieldRepository.deleteById(id);
         return Response.ok().build();
     }
 

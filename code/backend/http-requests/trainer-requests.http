@@ -1,0 +1,19 @@
+GET http://localhost:8080/api/trainer
+
+###
+GET http://localhost:8080/api/trainer/1
+
+###
+GET http://localhost:8080/api/trainer/firstlast?first=Mike&last=Johnson
+
+###
+POST http://localhost:8080/api/trainer
+Content-Type: application/json
+
+{
+  "firstName": "Valentin",
+  "lastName": "Weinhäupl"
+}
+
+###
+DELETE http://localhost:8080/api/trainer/1

@@ -34,7 +34,7 @@ public class TrainerResource {
     }
 
     @GET
-    @Path("(/firstandlast")
+    @Path("firstlast")
     @Produces(MediaType.APPLICATION_JSON)
     public List<Trainer> findByFirstAndLastName(@QueryParam("first") String firstName,
                                           @QueryParam("last") String lastName){
@@ -50,10 +50,10 @@ public class TrainerResource {
     }
 
     @DELETE
-    @Consumes(MediaType.APPLICATION_JSON)
     @Transactional
-    public Trainer delete(Trainer trainer){
-        trainerRepository.delete(trainer);
-        return trainer;
+    @Path("{id}")
+    public Response delete(@PathParam("id") long id){
+        trainerRepository.deleteById(id);
+        return Response.ok().build();
     }
 }

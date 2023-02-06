@@ -65,15 +65,17 @@ public class PlayerResource {
     @Consumes(MediaType.APPLICATION_JSON)
     public Response update(@PathParam("playerId") Long id,Player player, @Context UriInfo uriInfo){
         Player player1 = playerRepository.findById(id);
+        //man musss nicht persisten, da player1 schon in der Datenbank ist
         player1.setFirstname(player.getFirstname());
-        playerRepository.persist(player1);
         return Response.created(uriInfo.getAbsolutePathBuilder().path(Long.toString(player.getPlayerId())).build()).build();
     }
 
     @DELETE
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response delete(Player player) {
-        playerRepository.delete(player);
+    @Transactional
+    @Path("{id}")
+    public Response delete(@PathParam("id") long id) {
+        playerRepository.deleteById(id);
         return Response.noContent().build();
     }
 }

@@ -28,17 +28,17 @@ public class AgeLevelResource {
     }
 
     @GET
-    @Path("{ageLevelId}")
+    @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public AgeLevel findById(@PathParam("ageLevelId") long ageLevelId){
+    public AgeLevel findById(@PathParam("id") long ageLevelId){
         logger.info(ageLevelId);
         return ageLevelRepository.findById(ageLevelId);
     }
 
     @GET
-    @Path("{ageLevelName}")
+    @Path("byName")
     @Produces(MediaType.APPLICATION_JSON)
-    public AgeLevel findByName(@PathParam("ageLevelName") String name){
+    public AgeLevel findByName(@QueryParam("ageLevelName") String name){
         logger.info(name);
         return ageLevelRepository.find("ageLevelName", name).firstResult();
     }
@@ -53,8 +53,9 @@ public class AgeLevelResource {
 
     @DELETE
     @Transactional
-    public Response delete(AgeLevel ageLevel){
-        ageLevelRepository.delete(ageLevel);
+    @Path("{id}")
+    public Response delete(@PathParam("id") long id){
+        ageLevelRepository.deleteById(id);
         return Response.ok().build();
     }
 }

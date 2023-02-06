@@ -10,4 +10,13 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:8080/api/player/firstlast?firstName=John&lastName=Doe
+GET http://localhost:8080/api/player
+
+###
+GET http://localhost:8080/api/player/1
+
+###
+GET http://localhost:8080/api/player/firstlast?first=John&last=Doe
+
+###
+DELETE http://localhost:8080/api/player/1

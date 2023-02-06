@@ -1,0 +1,19 @@
+GET http://localhost:8080/api/agelevel
+
+###
+GET http://localhost:8080/api/agelevel/1
+
+###
+GET http://localhost:8080/api/agelevel/byName?ageLevelName=Senior
+
+###
+POST http://localhost:8080/api/agelevel
+Content-Type: application/json
+
+
+{
+  "ageLevelName" : "Under 8"
+}
+
+###
+DELETE http://localhost:8080/api/agelevel/8

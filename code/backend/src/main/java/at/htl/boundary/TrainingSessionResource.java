@@ -7,6 +7,7 @@ import org.jboss.logging.Logger;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
 
@@ -19,13 +20,13 @@ public class TrainingSessionResource {
     TrainingSessionRepository trainingSessionRepository;
 
     @GET
-    @Produces("application/json")
+    @Produces(MediaType.APPLICATION_JSON)
     public List<TrainingSession> findAll(){
         return trainingSessionRepository.findAll().list();
     }
 
     @GET
-    @Produces("application/json")
+    @Produces(MediaType.APPLICATION_JSON)
     @Path("{id}")
     public TrainingSession findById(@PathParam("id") long id) {
         return trainingSessionRepository.findById(id);
@@ -33,7 +34,7 @@ public class TrainingSessionResource {
 
     @POST
     @Transactional
-    @Consumes("application/json")
+    @Consumes(MediaType.APPLICATION_JSON)
     public Response create(TrainingSession trainingSession){
         trainingSessionRepository.persist(trainingSession);
         return Response.ok().build();
@@ -41,7 +42,7 @@ public class TrainingSessionResource {
 
     @DELETE
     @Transactional
-    @Consumes("application/json")
+    @Consumes(MediaType.APPLICATION_JSON)
     public Response delete(TrainingSession trainingSession){
         trainingSessionRepository.delete(trainingSession);
         return Response.ok().build();

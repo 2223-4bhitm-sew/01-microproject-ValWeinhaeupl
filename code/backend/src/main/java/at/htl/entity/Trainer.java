@@ -2,16 +2,7 @@ package at.htl.entity;
 
 import javax.persistence.*;
 
-@NamedQueries({
-        @NamedQuery(
-                name = "Trainer.findAll",
-                query = "select t from Trainer t"
-        ),
-        @NamedQuery(
-                name = "Trainer.findByFirstAndLastName",
-                query="select t from Trainer t where t.firstName like :FIRSTNAME and t.lastName like :LASTNAME"
-        )
-})
+
 @Entity
 public class Trainer {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
